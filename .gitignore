@@ -1,0 +1,29 @@
+# Quartus generados
+**/db/
+**/incremental_db/
+**/output_files/
+**/simulation/
+
+# Archivos temporales / respaldo
+*.qws
+*.qsf.bak
+*.bak
+*.rpt
+*.summary
+*.done
+*.smsg
+*.jdi
+*.pof
+*.cdf
+
+# Logs
+*.log
+
+# Sistema operativo
+Thumbs.db
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+!SystemAlfa_Final/output_files/SystemAlfa_Final.sof
