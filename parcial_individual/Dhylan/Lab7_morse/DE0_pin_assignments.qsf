@@ -1,0 +1,14 @@
+# Reloj de 50 MHz
+set_location_assignment PIN_G21 -to CLOCK_50
+
+# Interruptores
+set_location_assignment PIN_J6 -to SW[0]
+set_location_assignment PIN_H5 -to SW[1]
+set_location_assignment PIN_H6 -to SW[2]
+
+# Pulsadores
+set_location_assignment PIN_G3 -to KEY[1]
+set_location_assignment PIN_H2 -to KEY[0]
+
+# LED fisico LEDG[0]
+set_location_assignment PIN_J1 -to LEDR[0]
