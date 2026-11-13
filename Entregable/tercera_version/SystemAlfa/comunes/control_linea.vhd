@@ -13,10 +13,8 @@ end entity control_linea;
 
 architecture comportamiento of control_linea is
 
-    -- Evitan interpretar el estado inicial como una parada observada.
-    signal etapa1, etapa2 : std_logic := '1';
-
-    signal preparada : std_logic := '0';
+    -- Sincroniza SW3; al salir del reset se respeta su nivel actual.
+    signal etapa1, etapa2 : std_logic := '0';
     signal estado_led : std_logic := '0';
     signal habilitada : std_logic;
 
@@ -25,20 +23,14 @@ begin
     process(reloj, reinicio)
     begin
         if reinicio = '1' then
-            etapa1 <= '1';
-            etapa2 <= '1';
-            preparada <= '0';
+            etapa1 <= '0';
+            etapa2 <= '0';
             estado_led <= '0';
 
         elsif rising_edge(reloj) then
 
             etapa1 <= marcha;
             etapa2 <= etapa1;
-
-            -- Primero debe observarse el switch de marcha en cero.
-            if etapa2 = '0' then
-                preparada <= '1';
-            end if;
 
             if habilitada = '0' then
                 estado_led <= '0';
@@ -51,7 +43,7 @@ begin
     end process;
 
     habilitada <=
-        etapa2 and preparada and not bloqueo and not reinicio;
+        etapa2 and not bloqueo and not reinicio;
 
     pulso_motor <= pulso_linea_entrada and habilitada;
     led_linea <= estado_led and habilitada;

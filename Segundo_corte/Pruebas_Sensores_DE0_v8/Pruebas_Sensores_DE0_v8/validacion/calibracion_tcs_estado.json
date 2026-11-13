@@ -1,0 +1,13 @@
+{
+  "revision": "Calibracion TCS3200 para pantalla, 2026-11-09",
+  "fuente": "Muestras comunicadas por el usuario, en hexadecimal; calibracion reescalada a 30 ms y asentamiento 0.5 ms",
+  "archivos_modificados": [
+    "Hardware_Sensores/lector_tcs3200.vhd",
+    "Hardware_Sensores/Pruebas_Fisicas/TCS3200/Prueba_TCS3200.vhd",
+    "Pruebas_ModelSim/lector_tcs3200_TB.vhd"
+  ],
+  "quartus_compilado_despues_de_este_cambio": false,
+  "simulacion_ejecutada_despues_de_este_cambio": false,
+  "sof_tcs3200_incluido_corresponde_al_codigo_actual": false,
+  "validacion_fisica_con_piezas_reales": "pendiente"
+}

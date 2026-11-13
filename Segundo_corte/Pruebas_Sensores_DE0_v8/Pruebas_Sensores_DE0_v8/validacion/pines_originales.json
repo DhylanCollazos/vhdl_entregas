@@ -1,0 +1,72 @@
+[
+  {
+    "proyecto": "Adaptacion_GPIO\\GPIO_entradas.qsf",
+    "asignaciones": 4,
+    "conflictos": []
+  },
+  {
+    "proyecto": "Adaptacion_GPIO\\SystemAlfa_Sensores.qsf",
+    "asignaciones": 56,
+    "conflictos": []
+  },
+  {
+    "proyecto": "comunes\\DE0_pin_SystemAlfa.qsf",
+    "asignaciones": 52,
+    "conflictos": []
+  },
+  {
+    "proyecto": "Hardware_Sensores\\GPIO_hardware.qsf",
+    "asignaciones": 8,
+    "conflictos": []
+  },
+  {
+    "proyecto": "Hardware_Sensores\\Pruebas_Fisicas\\HCSR04\\Prueba_HCSR04.qsf",
+    "asignaciones": 44,
+    "conflictos": []
+  },
+  {
+    "proyecto": "Hardware_Sensores\\Pruebas_Fisicas\\TCS3200\\Prueba_TCS3200.qsf",
+    "asignaciones": 57,
+    "conflictos": []
+  },
+  {
+    "proyecto": "Hardware_Sensores\\Pruebas_Fisicas\\V183\\Prueba_V183.qsf",
+    "asignaciones": 15,
+    "conflictos": []
+  },
+  {
+    "proyecto": "Hardware_Sensores\\SystemAlfa_Hardware.qsf",
+    "asignaciones": 60,
+    "conflictos": []
+  },
+  {
+    "proyecto": "RF1_Transporte\\RF1_Transporte.qsf",
+    "asignaciones": 52,
+    "conflictos": []
+  },
+  {
+    "proyecto": "RF2_Inspeccion\\RF2_Inspeccion.qsf",
+    "asignaciones": 52,
+    "conflictos": []
+  },
+  {
+    "proyecto": "RF3_Clasificacion\\RF3_Clasificacion.qsf",
+    "asignaciones": 52,
+    "conflictos": []
+  },
+  {
+    "proyecto": "RF4_Historial\\RF4_Historial.qsf",
+    "asignaciones": 52,
+    "conflictos": []
+  },
+  {
+    "proyecto": "RF5_Conteo\\RF5_Conteo.qsf",
+    "asignaciones": 52,
+    "conflictos": []
+  },
+  {
+    "proyecto": "SystemAlfa_Final\\SystemAlfa_Final.qsf",
+    "asignaciones": 52,
+    "conflictos": []
+  }
+]

@@ -1,0 +1,18 @@
+[
+  "RF1_Transporte_TB",
+  "RF2_Inspeccion_TB",
+  "RF3_Clasificacion_TB",
+  "RF4_Historial_TB",
+  "RF5_Conteo_TB",
+  "SystemAlfa_Limites_TB",
+  "maquina_estados_control_TB",
+  "memoria_ram_historial_TB",
+  "rom_categorias_TB",
+  "entrada_presencia_v183_TB",
+  "lector_hcsr04_TB",
+  "lector_hcsr04_montaje_TB",
+  "lector_tcs3200_TB",
+  "pwm_fisico_TB",
+  "SystemAlfa_Final_TB",
+  "SystemAlfa_Hardware_TB"
+]

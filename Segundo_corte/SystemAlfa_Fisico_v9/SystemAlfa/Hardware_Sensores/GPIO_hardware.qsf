@@ -1,0 +1,24 @@
+# Entradas y salidas externas para SystemAlfa_Hardware.
+# Verificar fisicamente la orientacion del conector GPIO antes de energizar.
+
+# V183
+set_location_assignment PIN_AB16 -to V183_OUT
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to V183_OUT
+
+# HC-SR04
+set_location_assignment PIN_AA16 -to HCSR04_TRIG
+set_location_assignment PIN_AA15 -to HCSR04_ECHO
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HCSR04_TRIG
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HCSR04_ECHO
+
+# TCS3200
+set_location_assignment PIN_AB15 -to TCS_OUT
+set_location_assignment PIN_AA14 -to TCS_S2
+set_location_assignment PIN_AB14 -to TCS_S3
+set_location_assignment PIN_AB13 -to TCS_S0
+set_location_assignment PIN_AA13 -to TCS_S1
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TCS_OUT
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TCS_S2
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TCS_S3
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TCS_S0
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TCS_S1

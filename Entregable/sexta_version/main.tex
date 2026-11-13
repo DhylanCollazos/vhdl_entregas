@@ -1,0 +1,271 @@
+\documentclass[12pt,a4paper]{article}
+
+% PAQUETES
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{setspace}
+
+% CONFIGURACIÓN
+\geometry{margin=2.5cm}
+\onehalfspacing
+
+\begin{document}
+
+% PORTADA
+\begin{titlepage}
+    \centering
+    
+    \vspace*{1.5cm}
+    
+    {\Large \textbf{UNIVERSIDAD DEL CAUCA}}\\[0.5cm]
+    {\large Facultad de Ingeniería Electrónica y Telecomunicaciones}\\[2cm]
+    
+    {\Huge \textbf{DIGITALIZACIÓN DE SEÑALES}}\\[0.3cm]
+    {\Large Conmutación telefónica mediante PCM}\\[2cm]
+    
+    \textbf{Práctica de laboratorio}\\[1.5cm]
+    
+    \begin{center}
+        \textbf{Estudiante: Dhylan Styven Collazos Caicedo}\\[0.5cm]
+        \textbf{Asignatura: Sistemas de Conmutación}\\[0.5cm]
+        \textbf{Docente: Carlos Hernan Tobar Arteaga}\\[0.5cm]
+        \textbf{Fecha: 11/08/2026}
+    \end{center}
+    
+    \vfill
+    
+    {\large Popayán, Cauca}\\
+    {\large 2026}
+\end{titlepage}
+
+% INTRODUCCIÓN
+\section{Introducción}
+
+La digitalización de señales permite transformar señales
+analógicas, como la voz, en información digital que puede
+transmitirse y procesarse eficientemente.
+
+En esta práctica se estudia la modulación por impulsos
+codificados (PCM), considerando las etapas de muestreo,
+cuantificación y codificación. También se analiza el uso
+de companding A-law, la transmisión mediante un canal
+ruidoso y la reconstrucción de la señal en el receptor.
+
+A continuación, se presentan las respuestas a las preguntas
+planteadas durante el desarrollo de la práctica.
+
+% DESARROLLO
+\section{Desarrollo de las preguntas}
+
+\subsection{Frecuencia de muestreo}
+
+\textbf{¿Qué sucede al disminuir la frecuencia de muestreo
+de 8000 Hz a 4000 Hz?}
+
+Al disminuir la frecuencia de muestreo se reduce la cantidad
+de muestras tomadas por segundo, provocando pérdida de
+información de la señal original.
+
+Según el teorema de Nyquist-Shannon, se requiere:
+
+\[
+F_s \geq 2f_{\max}
+\]
+
+Por lo tanto, con 4000 Hz solamente podrían representarse
+frecuencias de hasta 2000 Hz sin aliasing. Esto ocasiona
+pérdida de componentes importantes de la voz y disminuye
+la claridad del audio reconstruido.
+
+\subsection{Bits por muestra}
+
+\textbf{¿Cómo varía el ruido de cuantización al utilizar
+4, 8 o 12 bits?}
+
+La cantidad de bits determina los niveles disponibles para
+representar la amplitud de la señal:
+
+\[
+L=2^n
+\]
+
+Con 4 bits se obtienen 16 niveles, con 8 bits se obtienen
+256 y con 12 bits se obtienen 4096 niveles.
+
+Al aumentar la resolución disminuye el error de
+cuantización, permitiendo representar la señal con mayor
+precisión y mejorar la calidad del audio.
+
+\subsection{Companding A-law vs $\mu$-law}
+
+\textbf{¿Qué diferencias existen en la forma de onda y
+la calidad percibida?}
+
+Ambas técnicas utilizan compresión logarítmica para mejorar
+la representación de señales de voz.
+
+A-law se utiliza principalmente en Europa, mientras que
+$\mu$-law es común en Norteamérica. Aunque ambas reducen
+el error de cuantificación en señales de voz, presentan
+diferencias en la distribución de los niveles y en la
+forma de onda reconstruida.
+
+\subsection{Número de niveles de cuantificación}
+
+\textbf{¿Qué ocurre al utilizar 16, 256 o 1024 niveles?}
+
+Con 16 niveles la señal presenta mayor distorsión debido
+a la baja resolución. Con 256 niveles se obtiene una
+representación más precisa, mientras que con 1024 niveles
+disminuye el error de cuantificación.
+
+Por lo tanto, aumentar los niveles mejora la fidelidad
+de la señal, aunque requiere más bits para su transmisión.
+
+\subsection{Relación señal/ruido (SNR)}
+
+\textbf{¿Cuál es el impacto de utilizar 30 dB, 10 dB y 0 dB?}
+
+La relación señal/ruido se expresa mediante:
+
+\[
+SNR_{dB}=10\log_{10}\left(\frac{P_s}{P_n}\right)
+\]
+
+Donde $P_s$ representa la potencia de la señal y $P_n$
+la potencia del ruido.
+
+\begin{itemize}
+    \item \textbf{30 dB:} el ruido es bajo y la detección
+    de bits es más confiable.
+    \item \textbf{10 dB:} aumenta la influencia del ruido
+    y pueden aparecer errores de detección.
+    \item \textbf{0 dB:} ambas potencias son iguales,
+    provocando una mayor probabilidad de errores.
+\end{itemize}
+
+En consecuencia, una menor SNR deteriora la señal recibida
+y afecta la calidad del audio reconstruido.
+
+\subsection{Filtro pasabajas}
+
+\textbf{¿Cómo cambia la señal al modificar la frecuencia
+de corte a 2000, 3400 y 5000 Hz?}
+
+El filtro pasabajas conserva las componentes inferiores
+a su frecuencia de corte y atenúa las superiores.
+
+Con 2000 Hz se pierden componentes importantes de la voz,
+produciendo un sonido apagado. Con 3400 Hz se conserva
+aproximadamente el ancho de banda telefónico. Con 5000 Hz
+se mantienen más frecuencias altas, aunque también pueden
+permanecer componentes no deseadas.
+
+\subsection{Orden del filtro}
+
+\textbf{¿Qué diferencias existen al utilizar órdenes
+2, 4 y 10?}
+
+El orden determina la pendiente de atenuación del filtro.
+Un orden 2 presenta una transición más suave, mientras
+que los órdenes 4 y 10 ofrecen una mayor selectividad
+en frecuencia.
+
+En esta práctica se utiliza \texttt{filtfilt()}, que
+realiza el filtrado en ambas direcciones y evita el
+retardo de fase habitual de un filtro causal. Sin embargo,
+pueden aparecer efectos transitorios.
+
+\subsection{Comparación temporal}
+
+\textbf{¿Qué tan similares son las formas de onda al
+comparar intervalos de 100 ms?}
+
+Al aumentar el intervalo de visualización se observa una
+mayor porción de las señales original y reconstruida.
+
+Ambas conservan características generales similares,
+aunque pueden existir diferencias de amplitud y distorsiones
+producidas por la cuantificación, el ruido del canal y
+el filtrado.
+
+\subsection{Comparación perceptual}
+
+\textbf{¿Cuál es el efecto del filtrado pasabajas sobre
+la calidad percibida de la voz?}
+
+Antes del filtrado pueden percibirse irregularidades y
+componentes de alta frecuencia no deseadas. Después del
+filtrado, el sonido suele ser más suave debido a la
+atenuación de dichas componentes.
+
+Sin embargo, una frecuencia de corte demasiado baja
+puede eliminar información importante de la voz y
+disminuir su claridad.
+
+\subsection{Medida cuantitativa: MSE}
+
+\textbf{¿Cómo se calcula el error cuadrático medio y cómo
+se relaciona con la percepción auditiva?}
+
+El error cuadrático medio permite medir la diferencia
+entre la señal original y la reconstruida:
+
+\[
+MSE=\frac{1}{N}\sum_{i=1}^{N}
+(x_i-\hat{x}_i)^2
+\]
+
+Donde $N$ representa el número de muestras, $x_i$ la
+señal original y $\hat{x}_i$ la señal reconstruida.
+
+En Python se calcula mediante:
+
+\begin{lstlisting}[language=Python]
+mse = np.mean((x_in - x_filt)**2)
+print("MSE:", mse)
+\end{lstlisting}
+
+Un valor cercano a cero indica mayor similitud entre
+ambas señales, mientras que un valor elevado representa
+una mayor diferencia. Sin embargo, el MSE no garantiza
+por sí solo una mejor calidad auditiva.
+
+% CONCLUSIONES
+\section{Conclusiones}
+
+\begin{enumerate}
+    \item La frecuencia de muestreo y la resolución de
+    cuantificación son fundamentales para conservar
+    la información de una señal analógica.
+
+    \item Las técnicas A-law y $\mu$-law permiten mejorar
+    la representación de señales de voz mediante
+    cuantificación no uniforme.
+
+    \item El ruido presente en el canal puede provocar
+    errores durante la detección de bits y afectar
+    directamente la calidad del audio reconstruido.
+
+    \item El filtrado pasabajas permite atenuar componentes
+    no deseadas y obtener una señal más suave cuando
+    sus parámetros se seleccionan adecuadamente.
+
+    \item El error cuadrático medio proporciona una medida
+    cuantitativa que complementa la comparación visual
+    y auditiva de las señales.
+\end{enumerate}
+
+En general, la práctica permitió comprender el funcionamiento
+de un sistema de digitalización PCM y la importancia de
+cada una de sus etapas para conseguir una transmisión
+de voz confiable.
+
+\end{document}

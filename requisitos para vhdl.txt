@@ -1,0 +1,27 @@
+debe tener
+memoria ram
+memoria rom
+maquina de estados
+los test bench (3 de ellos)
+3 procesos
+memoria 
+transición estado 
+lógica 
+tiene que quedar sola, es decir sin memoria ram ni nada
+construido por otro lado la ROM 
+entrada dirección y salida de datos para rom y ram
+en la rom se guardan los datos de los colores
+3 testbench
+función o procedimiento. Cualquiera de las dos(en un componente aparte)
+RTL con componentes y la maquina de estados 
+*En la parte de la rubrica algo de innovacion
+dentro de 8 se presenta completo. 
+3 preguntas individuales.
+Grabar videos para las pruebas de la velocidad. 
+
+
+probar las cosas de forma individual. 
+
+
+
+revisar si el color de la cinta puede tener problema con los umbrales. 

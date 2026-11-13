@@ -1,0 +1,22 @@
+[
+  {
+    "qsf": "Hardware_Sensores/Pruebas_Fisicas/HCSR04/Prueba_HCSR04.qsf",
+    "pines": 44,
+    "conflictos": []
+  },
+  {
+    "qsf": "Hardware_Sensores/Pruebas_Fisicas/TCS3200/Prueba_TCS3200.qsf",
+    "pines": 57,
+    "conflictos": []
+  },
+  {
+    "qsf": "Hardware_Sensores/Pruebas_Fisicas/V183/Prueba_V183.qsf",
+    "pines": 15,
+    "conflictos": []
+  },
+  {
+    "qsf": "Hardware_Sensores/Pruebas_Fisicas/V183/Prueba_V183_Activo_Alto.qsf",
+    "pines": 15,
+    "conflictos": []
+  }
+]

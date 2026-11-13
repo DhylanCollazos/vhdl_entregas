@@ -1,0 +1,9 @@
+# Solo para SystemAlfa_Sensores. No mezclar con otras propuestas GPIO.
+set_location_assignment PIN_AB16 -to {SENSOR_PRESENCIA_N}
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to {SENSOR_PRESENCIA_N}
+set_location_assignment PIN_AA16 -to {SENSOR_COLOR[0]}
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to {SENSOR_COLOR[0]}
+set_location_assignment PIN_AA15 -to {SENSOR_COLOR[1]}
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to {SENSOR_COLOR[1]}
+set_location_assignment PIN_AB15 -to {SENSOR_TAMANO}
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to {SENSOR_TAMANO}

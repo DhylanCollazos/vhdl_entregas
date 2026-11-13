@@ -61,7 +61,7 @@ architecture estructural of captura_pieza is
     end component;
 
     signal boton, capturar : std_logic;
-    signal pulso_presencia, pulso_liberacion : std_logic;
+    signal pulso_presencia, libre_estable : std_logic;
     signal preparado : std_logic := '0';
 
     signal entradas, estables : std_logic_vector(2 downto 0);
@@ -94,7 +94,7 @@ begin
             estado_salida => presencia_activa
         );
 
-    -- Detecta que el sensor quedo libre de forma estable.
+    -- El nivel libre tambien rearma despues de inicializar el filtro.
     U_LIBERACION : filtro_boton
         generic map (
             CICLOS_ESTABLES => CICLOS_FILTRO
@@ -103,8 +103,8 @@ begin
             reloj         => reloj,
             reinicio      => reinicio,
             boton_entrada => presencia_baja,
-            pulso_salida  => pulso_liberacion,
-            estado_salida => open
+            pulso_salida  => open,
+            estado_salida => libre_estable
         );
 
     capturar <= pulso_presencia and preparado;
@@ -116,7 +116,7 @@ begin
 
         elsif rising_edge(reloj) then
 
-            if pulso_liberacion = '1' then
+            if libre_estable = '1' then
                 preparado <= '1';
 
             elsif capturar = '1' then
